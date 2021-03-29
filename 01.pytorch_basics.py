@@ -365,10 +365,12 @@ mystr = "Assign the device to a tensor in 2 way"
 myspacers(mystr, len(mystr), "-")
 print("""
 if torch.cuda.is_available():
-    device = torch.device("cuda") # setting the device
-    x = torch.ones(5, device=device)
-    y = torch.ones(5)
-    y = y.to(device) 
+    
+    device = torch.device("cuda")       # setting the device to cuda
+    x = torch.ones(5, device=device)    # assign the device for the tensor x
+    
+    y = torch.ones(5)                   # create a new tensor
+    y = y.to(device)                    # assign it to a device later
     print(x)
 """)
 # %%
